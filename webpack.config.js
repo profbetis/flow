@@ -26,5 +26,6 @@ module.exports = {
       include: path.join(__dirname, 'src'),
       exclude: /\node_modules/
     }]
-  }
+  },
+  devPort: 8080
 };
