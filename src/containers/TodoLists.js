@@ -3,6 +3,10 @@ import { connect } from 'react-redux'
 
 // Import Action Creators
 import { toggleTodo } from '../actions/main'
+import { newTodo } from '../actions/main'
+
+// Variables
+var input
 
 // Main Body
 const statusText = (status) => {
@@ -72,6 +76,42 @@ const TodoLists = ({
             </tbody>
             <tfoot></tfoot>
             </table>
+
+            <form onSubmit={e => {
+                // Prevent page reload on click/submit
+                e.preventDefault()
+                // If the todo has no title, don't do anything
+                if (!newTitle.value.trim()) { return }
+                // Dispatch the 'newTodo' function with the value of the input
+                dispatch(newTodo(newTitle.value.trim()))
+                // Reset the input's value to empty for a clean slate
+                newTitle.value = ''
+            }}>
+            <table><tbody><tr>
+                <td className="todoSerial"></td>
+                <a type="submit"><td className="todoStatus button no-text-select">+</td></a>
+                <td className="todoTitle" style={{
+                    paddingTop: '0em',
+                    paddingBottom: '0em'
+                }}>
+                    <input type="text" maxLength="32" name="newTitle"
+                           placeholder="Task Name"
+                           style={{
+                               height: '100%',
+                               width: '100%',
+                               border: 'none',
+                               height: '2em',
+                               padding: '0.2em 0.1em',
+                               margin: '0em'
+                           }}
+                    ref={text => {
+                      input = text
+                    }} />
+                </td>
+                <td className="todoDate"></td>
+
+            </tr></tbody></table>
+            </form>
 
         </div>
     )}</div>
