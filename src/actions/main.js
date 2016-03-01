@@ -7,3 +7,13 @@ export const toggleTodo = (objectId) => {
         objectId: objectId
     }
 }
+
+export const newTodo = (title, /*dueDate, dueTime,*/ listId) => {
+    return{
+        type: 'NEW_TODO',
+        title: title,
+        dueDate: "Sometime",
+        dueTime: "1200",
+        listId: listId
+    }
+}
