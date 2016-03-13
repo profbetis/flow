@@ -8,12 +8,13 @@ export const toggleTodo = (objectId) => {
     }
 }
 
-export const newTodo = (title, /*dueDate, dueTime,*/ listId) => {
+export const newTodo = (newId, title /*, dueDate, dueTime*/, filterName) => {
     return{
         type: 'NEW_TODO',
+        id: newId,
         title: title,
-        dueDate: "Sometime",
-        dueTime: "1200",
-        listId: listId
+        dueDate: "N/A",
+        dueTime: "",
+        filterName: filterName
     }
 }

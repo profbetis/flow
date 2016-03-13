@@ -15,6 +15,16 @@ const object = (state, action) => {
 const objects = (state = [], action) => {
     // Switch logic chooses what to execute based on the action type
     switch (action.type){
+        case 'NEW_TODO': return(
+            state.concat({
+                id: action.id,
+                title: action.title,
+                complete: false,
+                dueDate: action.dueDate,
+                dueTime: action.dueTime
+            })
+        )
+
         case 'TOGGLE_TODO': return(
             state.map(o => object(o, action))
         )

@@ -1,12 +1,22 @@
-table{
+.todoList{
     width: 100%;
     font-size: 0.8em;
     transition: all 0.1s ease-in;
 }
-thead.todoList tr{
+.todoList>thead tr{
     text-align: center;
     background-color: #f0f0f0;
     font-weight: 700;
+}
+.todolist button{
+    background:none!important;
+    border:none !important;
+    padding:0 !important;
+    height: 2em;
+    color: #606060;
+}
+.todolist .button{
+    margin: 0 !important;
 }
 tbody{
 }
@@ -27,7 +37,7 @@ tbody tr:hover{
 .todoSerial{
     width: 1em;
     text-align: center;
-    opacity: 0.4;
+    opacity: 0.3;
 }
 .todoSerial.true{
 }
